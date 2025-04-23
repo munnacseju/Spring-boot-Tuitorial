@@ -1,10 +1,8 @@
-package com.crud.crud;
+package com.crud.crud.entity;
 
 
-import com.crud.crud.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

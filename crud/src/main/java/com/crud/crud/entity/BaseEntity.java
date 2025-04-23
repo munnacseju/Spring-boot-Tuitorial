@@ -21,7 +21,7 @@ import java.util.UUID;
 public class BaseEntity {
     @Id
     private UUID id;
-    @Column(nullable = false)
-    private boolean isDeleted = Boolean.FALSE;
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private boolean isDeleted;
     private LocalDateTime createdAt;
 }

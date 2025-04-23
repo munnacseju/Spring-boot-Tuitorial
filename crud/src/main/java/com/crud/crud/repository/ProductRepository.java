@@ -1,7 +1,6 @@
-package com.crud.crud;
+package com.crud.crud.repository;
 
-import com.crud.crud.param.PageableParam;
-import org.springframework.data.jpa.domain.Specification;
+import com.crud.crud.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

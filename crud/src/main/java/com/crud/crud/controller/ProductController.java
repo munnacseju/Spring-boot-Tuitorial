@@ -1,16 +1,16 @@
-package com.crud.crud;
+package com.crud.crud.controller;
 
+import com.crud.crud.repository.ProductRepository;
+import com.crud.crud.entity.Product;
 import com.crud.crud.param.PageableParam;
 import com.crud.crud.tools.QueryHelper;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.media.Schema;
-import net.kaczmarzyk.spring.data.jpa.domain.Equal;
 import net.kaczmarzyk.spring.data.jpa.domain.In;
 import net.kaczmarzyk.spring.data.jpa.domain.LikeIgnoreCase;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.And;
-import net.kaczmarzyk.spring.data.jpa.web.annotation.Join;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
@@ -34,11 +34,8 @@ public class ProductController {
 
     @PostMapping("/save")
     public Product save(@RequestBody Product product) {
-        for(int i= 0; i<10; i++) {
-            product.setId(UUID.randomUUID());
-            productRepository.save(product);
-        }
-        return null;
+        product.setId(UUID.randomUUID());
+        return productRepository.save(product);
     }
 
     @GetMapping("/product/{id}")
